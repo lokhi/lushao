@@ -7,12 +7,14 @@ Gem::Specification.new do |spec|
   spec.name          = "lushao"
   spec.version       = Lushao::VERSION
   spec.authors       = ["Louis Perello"]
-  spec.email         = ["perello.louis@gmail"]
+  spec.email         = ["contact@lokhi.xyz"]
 
 
   spec.summary       = %q{A tiny ruby wrapper around Lusha API }
   spec.description   = %q{A tiny ruby wrapper around Lusha API. The Lusha API enables you to enrich and authenticate the business profiles you utilize and offer. }
   spec.license       = "MIT"
+  spec.homepage    = 'https://github.com/lokhi/lushao.git'
+  spec.metadata    = { "source_code_uri" => "https://github.com/lokhi/lushao.git" }
 
   spec.files = [
    "Gemfile",
@@ -30,9 +32,6 @@ Gem::Specification.new do |spec|
 
   spec.add_development_dependency "bundler", "~> 1.8"
   spec.add_development_dependency "rake", "~> 10.0"
-  spec.add_development_dependency 'rspec'
-  spec.add_development_dependency "vcr"
-  spec.add_development_dependency "typhoeus"
 
   spec.required_ruby_version = ">= 1.9.3"
 

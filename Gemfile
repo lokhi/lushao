@@ -1,4 +1,4 @@
 source 'https://rubygems.org'
 
-# Specify your gem's dependencies in emailhunter.gemspec
+# Specify your gem's dependencies in lushao.gemspec
 gemspec

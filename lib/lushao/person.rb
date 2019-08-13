@@ -7,10 +7,11 @@ module Lushao
   class Person
     attr_reader :emailAddresses, :phoneNumbers
 
-    def initialize(company, first_name, last_name, key)
-      @company = company
+    def initialize(company_or_domain, first_name, last_name,flag_company_or_domain, key)
+      @company_or_domain = company_or_domain
       @first_name = first_name
       @last_name = last_name
+      @flag_company_or_domain=flag_company_or_domain
       @key = key
     end
 
@@ -22,7 +23,12 @@ module Lushao
     private
 
     def apiresponse
-      url = URI.parse(URI.encode("#{API_PERSON_URL}firstName=#{@first_name}&lastName=#{@last_name}&company=#{@company}"))
+      if @flag_company_or_domain == 0
+        url = URI.parse(URI.encode("#{API_PERSON_URL}firstName=#{@first_name}&lastName=#{@last_name}&company=#{@company_or_domain}"))
+      else
+        url = URI.parse(URI.encode("#{API_PERSON_URL}firstName=#{@first_name}&lastName=#{@last_name}&domain=#{@company_or_domain}"))
+      end
+
       response = Faraday.new(url, :headers => {'api_key' => @key}).get
       response.success? ? JSON.parse(response.body, {symbolize_names: true}) : []
     end
