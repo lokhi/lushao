@@ -11,12 +11,12 @@ module Lushao
   		@key = key
   	end
 
-    def find_person_with_company(company, first_name, last_name)
-      Lushao::Person.new(company, first_name, last_name,0, self.key).get_results
+    def find_person_with_company(company, first_name, last_name,property=nil)
+      Lushao::Person.new(company, first_name, last_name,0, self.key,property).get_results
     end
 
-    def find_person_with_domain(domain, first_name, last_name)
-      Lushao::Person.new(domain, first_name, last_name,1, self.key).get_results
+    def find_person_with_domain(domain, first_name, last_name,property=nil)
+      Lushao::Person.new(domain, first_name, last_name,1, self.key,property).get_results
     end
 
     def find_company_with_name(name)
