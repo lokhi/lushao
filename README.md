@@ -35,9 +35,27 @@ The person API lets you look up a person data based on his name and the company,
 ```ruby
 result = lushao.find_person_with_company("intercom","Rob","Taylor")
 ```
+##### hit only with phone number
+```ruby
+result = lushao.find_person_with_company("intercom","Rob","Taylor","phoneNumbers")
+```
+##### hit only with email
+```ruby
+result = lushao.find_person_with_company("intercom","Rob","Taylor","emailAddresses")
+```
+
 ### With company domain
 ```ruby
 result = lushao.find_person_with_domain("intercom.com","Rob","Taylor")
+```
+##### hit only with phone number
+```ruby
+result = lushao.find_person_with_domain("intercom.com","Rob","Taylor","phoneNumbers")
+```
+
+##### hit only with email
+```ruby
+result = lushao.find_person_with_domain("intercom.com","Rob","Taylor","emailAddresses")
 ```
 
 ### Accessing person response
